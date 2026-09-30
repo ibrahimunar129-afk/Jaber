@@ -22,11 +22,16 @@ jobs:
 
       - name: Extract JABER project
         run: unzip -o JABER_CLOUD_BUILD_READY.zip
+
       - name: Make Gradle executable
-        run: cd JABER_APK_BUILD_FIXED && chmod +x gradlew
+        run: |
+          cd JABER_APK_BUILD_FIXED
+          chmod +x gradlew
 
       - name: Build Release APKs
-        run: cd JABER_APK_BUILD_FIXED && ./gradlew assembleRelease
+        run: |
+          cd JABER_APK_BUILD_FIXED
+          ./gradlew assembleRelease
 
       - name: Collect APKs
         run: |
