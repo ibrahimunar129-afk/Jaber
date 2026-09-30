@@ -18,7 +18,8 @@ jobs:
           java-version: '17'
 
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v4
+        uses: android-actions/setup-android@v4      - name: Extract JABER project
+        run: unzip -o JABER_CLOUD_BUILD_READY.zip
 
       - name: Make Gradle executable
         run: cd JABER_APK_BUILD_FIXED && chmod +x gradlew
