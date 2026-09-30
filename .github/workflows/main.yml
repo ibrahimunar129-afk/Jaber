@@ -21,10 +21,10 @@ jobs:
         uses: android-actions/setup-android@v4
 
       - name: Make Gradle executable
-        run: chmod +x gradlew
+        run: cd JABER_APK_BUILD_FIXED && chmod +x gradlew
 
       - name: Build Release APKs
-        run: ./gradlew assembleRelease
+        run: cd JABER_APK_BUILD_FIXED && ./gradlew assembleRelease
 
       - name: Collect APKs
         run: |
